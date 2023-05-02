@@ -1,0 +1,88 @@
+body{
+    background: url(fondoclaro.png);
+}
+
+header{
+    background: #b6f5ff;
+    margin: 0;
+    padding: 20px;
+    border-bottom: 2px solid#00c2df;
+}
+
+main{
+    background: #b6f5ff;
+    margin: 0 auto;
+    padding: 10px;
+    
+}
+
+header h1 {
+    font-size:3vw;
+    color: #000000;
+    text-align: center;
+}
+
+#list{
+    text-align: center;
+}
+
+nav {
+    margin: 0 auto;
+    align-items: center;
+}
+nav li {
+    display: inline;
+    padding: 10px;
+    background: #ffffff4d;
+    border-radius: 15%;
+}
+
+nav li a{
+    text-decoration: none;
+    color: rgb(0, 0, 0);
+}
+nav li a:hover {
+    color:#013838;
+    text-decoration: underline;
+    padding: 10px;
+    border-radius: 15%;
+    background: #bcbcbc;
+}
+
+main section{
+    border-radius: 10px;
+    background-color: rgb(148, 255, 218);
+    padding: 10px;
+    color: #FFF;
+    clear: both;
+    margin-bottom: 10px;
+    border: 1px solid #FFF;
+}
+
+section h2 {
+    font-family: 'Bowlby One SC';
+    color: rgb(1, 0, 44) ;
+    font-size:3vw;
+    line-height: .2vw;
+    text-align: center;
+    transition: color .25s linear;
+}
+
+body tr{
+    background:#fffff8;
+    margin: auto;
+   
+}
+
+body td{
+    border: 2px solid#000000;
+    color: #000000;   
+}
+
+#info{
+    padding: 300 px auto;
+}
+
+table{
+    margin: auto;
+}
