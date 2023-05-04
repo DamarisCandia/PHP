@@ -1,3 +1,6 @@
+<?php
+include 'conexionBDD.php'
+?>
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -28,7 +31,7 @@
         <section id="1">
             <h2>Gastos</h2>
             
-            <table>
+            <table class = "table">
                 <tr>
                     <td>
                         Gastos
@@ -37,56 +40,26 @@
                         Valor
                     </td>
                 </tr>
+                <?php
+                $query = $bdd->query("SELECT * FROM gastos");
+                $conta =0;
+                if($query->num_rows > 0){
+                    while($row = $query->fetch_assoc()){
+                        $conta = $conta + $row["valor"];
+                ?>
                 <tr>
-                    <td>
-                        Agua
-                    </td>
-                    <td>
-                        $10.000
-                    </td>
-                </tr>
-                <tr>
-                    <td>
-                        Luz
-                    </td>
-                    <td>
-                        $10.000
-                    </td>
+                <td scope="row"><?php echo $row["tipo"]?></td>
+                <td scope="row"><?php echo $row["valor"]?></td>
                 </tr>
 
-                <tr>
-                    <td>
-                        Conserje
-                    </td>
-                    <td>
-                        $20.000
-                    </td>
-                </tr>
-                <tr>
-                    <td>
-                        Aseo
-                    </td>
-                    <td>
-                        $15.000
-                    </td>
-                </tr>
-                <tr>
-                    <td>
-                        Cartero   
-                    </td>
-                    <td>
-                        $5.000
-                    </td>
-                </tr>
-                <tr>
-                    <td>
-                        Mantenimiento áreas comunes   
-                    </td>
-                    <td>
-                        $5.000
-                    </td>
-                </tr>
-                
+                <?php
+                } 
+                }else{
+                    ?>
+                    <p>No hay perritos</p>
+                    <?php
+                }
+                ?>
             </table>
             
         </section>
@@ -94,7 +67,7 @@
         <section id="2">
             <h2>Pagos</h2>
             <h4>Fecha vencimiento : 02/05/2023</h4>
-            <h3>Total: $65.000</h3>
+            <h3>Total: <?php echo $conta ?></h3> 
             <p>En caso de atrasarse en su pago se cobrara una multa de $5.000 por semana</p>
             <button> Pagar</button>
         </section>
