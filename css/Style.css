@@ -57,6 +57,7 @@ main section{
     clear: both;
     margin-bottom: 10px;
     border: 1px solid #FFF;
+    margin: 0 auto;
 }
 
 section h2 {
@@ -78,10 +79,28 @@ body td{
     color: #000000;   
 }
 
+h4{
+    color: #000000;
+}
+
+p{
+    color: #000;
+}
+
 #info{
     padding: 300 px auto;
 }
 
 table{
-    margin: auto;
+    margin: 0 auto;
 }
+
+#boton {
+    display: flex;
+    justify-content: center;
+  }
+
+  ul{
+    align-items: center;
+    color: #000;
+  }

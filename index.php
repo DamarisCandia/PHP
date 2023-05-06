@@ -8,7 +8,8 @@ include 'conexionBDD.php'
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Gastos Comunes</title>
-    <link rel="stylesheet" href="css/Style.css">
+    <link rel="stylesheet" href="css/Style.css" type="text/css">
+    
 </head>
 <body>
     <div id = "info">
@@ -19,16 +20,20 @@ include 'conexionBDD.php'
 
     <main>
         <div id = "list">
-        <nav>
-            <ul>
-                <li><a href="#1">Gastos</a></li>
-                <li><a href="#2">Pagos</a></li>
-                <li><a href="#3">Historial de Pagos</a></li>
-            </ul>
-        </nav>
+            <nav>
+                <ul>
+                    <li><a href="?seccion=seccion1">Gastos</a></li>
+                    <li><a href="?seccion=seccion2">Pagos</a></li>
+                    <li><a href="?seccion=seccion3">Historia de pagos</a></li>
+                </ul>
+            </nav>
         </div>
 
-        <section id="1">
+        <?php
+            if (isset($_GET['seccion']) && $_GET['seccion'] == 'seccion1') {
+            ?>
+                <div class="seccion">
+                <section id="1">
             <h2>Gastos</h2>
             
             <table class = "table">
@@ -63,26 +68,53 @@ include 'conexionBDD.php'
             </table>
             
         </section>
+                </div>
+            <?php
+            }
+            elseif (isset($_GET['seccion']) && $_GET['seccion'] == 'seccion2') {
+            ?>  
+                    <section id="2">
+                        <h2>Pagos</h2>
+                        <br>
+                        <p>Fecha vencimiento : 02/05/2023</p>
+                        <h4>Total: $65.000</h4>
+                        <p>En caso de atrasarse en su pago se cobrara una multa de $5.000 por semana</p>
+                        <br>
+                        <div id="boton">
+                            <button> Pagar</button>
+                        </div>
+                    </section>
+            <?php
+            }
+            elseif (isset($_GET['seccion']) && $_GET['seccion'] == 'seccion3') {
+            ?>
+                <div class="seccion">
+                <section id="3">
+                    <h2>Historial de Pagos</h2>
 
-        <section id="2">
-            <h2>Pagos</h2>
-            <h4>Fecha vencimiento : 02/05/2023</h4>
-            <h3>Total: <?php echo $conta ?></h3> 
-            <p>En caso de atrasarse en su pago se cobrara una multa de $5.000 por semana</p>
-            <button> Pagar</button>
-        </section>
+                    <ul>
+                        <li>Abril : Cancelado</li>
+                        <li>Marzo : Cancelado</li>
+                        <li>Febrero : Cancelado</li>
+                        <li>Enero : Cancelado</li>
+                        <li>Diciembre : Cancelado</li>
+                    </ul>
 
-        <section id="3">
-            <h2>Historial de Pagos</h2>
+                    <div id="boton">
+                            <button>Generar informe</button>
+                        </div>
+                </section>
+                </div>
+            <?php
+            }
+            ?>
 
-            <ul>
-                <li>Abril : Cancelado</li>
-                <li>Marzo : Cancelado</li>
-                <li>Febrero : Cancelado</li>
-                <li>Enero : Cancelado</li>
-                <li>Diciembre : Cancelado</li>
-            </ul>
-        </section>
+
+        
+
+        
+
+        
     </main>
 
     </div>
