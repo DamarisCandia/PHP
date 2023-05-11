@@ -1,6 +1,11 @@
 <?php
 include 'conexionBDD.php'
 ?>
+<?php
+    if(!isset($_GET['seccion'])){
+        $_GET['seccion'] = 'seccion1';
+    }
+?>
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -55,13 +60,14 @@ include 'conexionBDD.php'
                 <tr>
                 <td scope="row"><?php echo $row["tipo"]?></td>
                 <td scope="row"><?php echo $row["valor"]?></td>
+                <td scope="row"><?php echo $row["fecha"]?></td>
                 </tr>
 
                 <?php
                 } 
                 }else{
                     ?>
-                    <p>No hay perritos</p>
+                    <p>No hay gastos registrados</p>
                     <?php
                 }
                 ?>

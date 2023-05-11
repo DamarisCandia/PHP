@@ -27,7 +27,10 @@ include 'conexionBDD.php'
         </div>
 
         <div class="boton">
-            <button onclick="location='inicio_cliente.php'">Iniciar Sesión</button>
+            <button onclick="location='inicio_cliente.php'">Cliente</button>
+        </div>
+        <div class="boton">
+            <button onclick="location='admin.php'">Administrador</button>
         </div>
 
     </div>
