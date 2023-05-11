@@ -1,3 +1,37 @@
+seciion 1 Cliente
+
+<table class = "table">
+                <tr>
+                    <td>
+                        Gastos
+                    </td>
+                    <td>
+                        Valor
+                    </td>
+                </tr>
+                <?php
+                $query = $bdd->query("SELECT * FROM gastos");
+                $conta =0;
+                if($query->num_rows > 0){
+                    while($row = $query->fetch_assoc()){
+                        $conta = $conta + $row["valor"];
+                ?>
+                <tr>
+                <td scope="row"><?php echo $row["tipo"]?></td>
+                <td scope="row"><?php echo $row["valor"]?></td>
+                <td scope="row"><?php echo $row["fecha"]?></td>
+                </tr>
+
+                <?php
+                } 
+                }else{
+                    ?>
+                    <p>No hay gastos registrados</p>
+                    <?php
+                }
+                ?>
+            </table>
+
 
 /*
 <section id="2">

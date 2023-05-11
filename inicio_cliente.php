@@ -41,37 +41,38 @@ include 'conexionBDD.php'
                 <section id="1">
             <h2>Gastos</h2>
             
-            <table class = "table">
-                <tr>
-                    <td>
-                        Gastos
-                    </td>
-                    <td>
-                        Valor
-                    </td>
-                </tr>
-                <?php
-                $query = $bdd->query("SELECT * FROM gastos");
-                $conta =0;
-                if($query->num_rows > 0){
-                    while($row = $query->fetch_assoc()){
-                        $conta = $conta + $row["valor"];
-                ?>
-                <tr>
-                <td scope="row"><?php echo $row["tipo"]?></td>
-                <td scope="row"><?php echo $row["valor"]?></td>
-                <td scope="row"><?php echo $row["fecha"]?></td>
-                </tr>
+            <table>
+  <thead>
+    <tr>
+      <th>Gasto</th>
+      <th>Valor</th>
+      <th>Fecha</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Electricidad</td>
+      <td>100</td>
+      <td>2023-05-10</td>
+    </tr>
+    <tr>
+      <td>Agua</td>
+      <td>50</td>
+      <td>2023-05-09</td>
+    </tr>
+    <tr>
+      <td>Gas</td>
+      <td>75</td>
+      <td>2023-05-08</td>
+    </tr>
+    <tr>
+      <td>Internet</td>
+      <td>80</td>
+      <td>2023-05-07</td>
+    </tr>
+  </tbody>
+</table>
 
-                <?php
-                } 
-                }else{
-                    ?>
-                    <p>No hay gastos registrados</p>
-                    <?php
-                }
-                ?>
-            </table>
             
         </section>
                 </div>
