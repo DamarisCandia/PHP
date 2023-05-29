@@ -1,0 +1,93 @@
+seciion 1 Cliente
+
+<table class = "table">
+                <tr>
+                    <td>
+                        Gastos
+                    </td>
+                    <td>
+                        Valor
+                    </td>
+                </tr>
+                <?php
+                $query = $bdd->query("SELECT * FROM gastos");
+                $conta =0;
+                if($query->num_rows > 0){
+                    while($row = $query->fetch_assoc()){
+                        $conta = $conta + $row["valor"];
+                ?>
+                <tr>
+                <td scope="row"><?php echo $row["tipo"]?></td>
+                <td scope="row"><?php echo $row["valor"]?></td>
+                <td scope="row"><?php echo $row["fecha"]?></td>
+                </tr>
+
+                <?php
+                } 
+                }else{
+                    ?>
+                    <p>No hay gastos registrados</p>
+                    <?php
+                }
+                ?>
+            </table>
+
+
+/*
+<section id="2">
+                        <h2>Pagos</h2>
+                        <br>
+                        <?php
+                        // Consulta para obtener los pagos de los miembros de la comunidad
+                        $query = $bdd->query("SELECT * FROM pagos");
+                        if($query->num_rows > 0){
+                            // Calcular el total de los pagos
+                            $total = 0;
+                            while($row = $query->fetch_assoc()){
+                                $total += $row["monto"];
+                            }
+                            ?>
+                            <p>Fecha vencimiento : 02/05/2023</p>
+                            <h4>Total: $<?php echo $total ?></h4>
+                            <br>
+                            <table class="table">
+                                <tr>
+                                    <th>Nombre</th>
+                                    <th>Estado</th>
+                                </tr>
+                                <?php
+                                // Consulta para obtener los miembros de la comunidad
+                                $query = $bdd->query("SELECT * FROM miembros");
+                                if($query->num_rows > 0){
+                                    while($row = $query->fetch_assoc()){
+                                        // Consulta para obtener el estado de pago de cada miembro
+                                        $pago_query = $bdd->query("SELECT * FROM pagos WHERE miembro_id = " . $row["id"] . " ORDER BY id DESC LIMIT 1");
+                                        $estado = "pendiente de pago";
+                                        if($pago_query->num_rows > 0){
+                                            $pago_row = $pago_query->fetch_assoc();
+                                            if($pago_row["monto"] >= $total){
+                                                $estado = "pagado";
+                                            }elseif($pago_row["fecha_vencimiento"] < date("Y-m-d")){
+                                                $estado = "moroso";
+                                            }
+                                        }
+                                        ?>
+                                        <tr>
+                                            <td><?php echo $row["nombre"] ?></td>
+                                            <td><?php echo $estado ?></td>
+                                        </tr>
+                                        <?php
+                                    }
+                                }
+                                ?>
+                            </table>
+                            <?php
+                        }else{
+                            ?>
+                            <p>No hay pagos registrados</p>
+                            <?php
+                        }
+                        ?>
+                        <br>
+                    </section>
+*/
