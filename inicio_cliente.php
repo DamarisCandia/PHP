@@ -72,7 +72,6 @@ include 'conexionBDD.php'
     </tr>
   </tbody>
 </table>
-
             
         </section>
                 </div>

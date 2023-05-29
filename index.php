@@ -33,6 +33,10 @@ include 'conexionBDD.php'
             <button onclick="location='admin.php'">Administrador</button>
         </div>
 
+        <div class="boton">
+            <button onclick="location='./PHP/index2_0.php'">2.0</button>
+        </div>
+
     </div>
 </body>
 </html>

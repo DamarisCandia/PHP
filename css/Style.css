@@ -52,7 +52,7 @@ main section{
     border-radius: 10px;
     background-color: rgb(148, 255, 218);
     padding: 10px;
-    color: #FFF;
+    color: #141313;
     clear: both;
     margin-bottom: 10px;
     border: 1px solid #FFF;
@@ -63,13 +63,14 @@ section h2 {
     font-family: 'Bowlby One SC';
     color: rgb(1, 0, 44) ;
     font-size:3vw;
+    
     line-height: .2vw;
     text-align: center;
     transition: color .25s linear;
 }
 
 body tr{
-    background:#fffff8;
+    background:#2ca7b8;
     margin: auto;
 }
 
@@ -77,7 +78,9 @@ body td{
     border: 2px solid#000000;
     color: #000000;   
 }
-
+h2{
+    color: #000000;
+}
 h4{
     color: #000000;
 }
