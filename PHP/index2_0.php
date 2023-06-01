@@ -29,8 +29,8 @@
 
   <form>
     <div class="form-group text-center">
-      <label for="inputEmail">Usuario</label>
-      <input type="email" class="form-control" id="inputEmail" placeholder="Usuario">
+      <label for="inputEmail">N° Departamento</label>
+      <input type="email" class="form-control" id="inputEmail" placeholder="N° Departamento">
     </div>
     <div class="form-group text-center">
       <label for="inputPassword">Contraseña</label>
