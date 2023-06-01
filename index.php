@@ -34,7 +34,7 @@ include 'conexionBDD.php'
         </div>
 
         <div class="boton">
-            <button onclick="location='./PHP/index2_0.php'">2.0</button>
+            <button onclick="location='./PHP_ADMIN/index2_0.php'">2.0</button>
         </div>
 
     </div>
