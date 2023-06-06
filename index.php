@@ -26,12 +26,7 @@ include 'conexionBDD.php'
             <input type="password" id="uname" name="name">
         </div>
 
-        <div class="boton">
-            <button onclick="location='inicio_cliente.php'">Cliente</button>
-        </div>
-        <div class="boton">
-            <button onclick="location='admin.php'">Administrador</button>
-        </div>
+
 
         <div class="boton">
             <button onclick="location='./PHP_ADMIN/index2_0.php'">2.0</button>

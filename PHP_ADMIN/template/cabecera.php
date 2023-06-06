@@ -5,9 +5,14 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="stylesheet" href="../css/bootstrap.css">
+        <link rel="stylesheet" href="../css/bootstrap.min.css">
         <link rel="stylesheet" href="../css/diseño.css" type="text/css">
+        <link rel="stylesheet" href="../css/carousel.css" type="text/css">
+        <link rel="stylesheet" href="../css/carousel.rtl.css" type="text/css">
         <link rel="icon" type="image/x-icon" href="../css/logoc.ico">
 
+        <script src="js/bootstrap.modal.js"></script>
+        
         <title>VIVE FELIZ</title>
     </head>
     <body>

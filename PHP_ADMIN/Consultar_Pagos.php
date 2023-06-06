@@ -40,6 +40,8 @@ include('../conexionBDD.php');
       ?>
     </tbody>
   </table>
+
+  
 </div>
 
 <?php include("template/pie.php"); ?>
