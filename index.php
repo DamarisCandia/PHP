@@ -4,6 +4,9 @@ include("template/cabecera.php");
 ?>
 
 <style>
+  body{
+    background: url(css/fondoC.png);
+}
   .form-group {
     width: 300px;
   }
