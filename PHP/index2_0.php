@@ -37,10 +37,9 @@
       <input type="password" class="form-control" id="inputPassword" placeholder="Contraseña">
     </div>
     <div class="d-flex justify-content-center flex-column mt-3">
-      <button type="submit" class="btn btn-primary btn-lg">Cliente</button>
-      <button type="submit" class="btn btn-primary btn-lg">Administrador</button>
-      <button type="submit" class="btn btn-primary btn-lg">¿Olvidaste tu contraseña?</button>
-      <button type="submit" class="btn btn-primary btn-lg">Registrarse</button>
+      <button type="submit" class="btn btn-primary btn-lg" onclick="location='inicio_cliente.php'">Ingresar</button>
+      <button type="submit" class="btn btn-primary btn-lg" onclick="location='admin.php'">¿Olvidaste tu contraseña?</button>
+      <button type="submit" class="btn btn-primary btn-lg" onclick="location='./PHP_ADMIN/index2_0.php'">2.0</button>
     </div>
   </form>
 </div>
