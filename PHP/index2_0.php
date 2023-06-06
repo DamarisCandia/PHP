@@ -25,7 +25,7 @@
 
 <img src="logoc.png">
 
-<div class="container d-flex justify-content-center align-items-center" style="height: 100vh">
+<div class="container d-flex justify-content-center align-items-center">
 
   <form>
     <div class="form-group text-center">

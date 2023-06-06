@@ -17,7 +17,7 @@
         }
 
         // Obtener todos los departamentos del edificio seleccionado
-        $queryDepartamentos = $bdd->prepare("SELECT Dept_Num_Id FROM VF_Departamentos WHERE Edif_Id = ?");
+        $queryDepartamentos = $bdd->prepare("SELECT Dept_Num_Id FROM VF_Departamentos WHERE Edif_Id = ? and ");
         $queryDepartamentos->bind_param("i", $edificioId);
         $queryDepartamentos->execute();
         $resultDepartamentos = $queryDepartamentos->get_result();

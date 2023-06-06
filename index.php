@@ -29,7 +29,7 @@ include 'conexionBDD.php'
 
 
         <div class="boton">
-            <button onclick="location='./PHP_ADMIN/index2_0.php'">2.0</button>
+            <button  type="submit" class="btn btn-primary btn-lg"  onclick="location='./PHP_ADMIN/index2_0.php'">2.0</button>
         </div>
 
     </div>
