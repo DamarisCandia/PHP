@@ -1,0 +1,11 @@
+/* Estilos para filas ocupadas */
+.ocupado {
+    background-color: red;
+    color: white;
+}
+
+/* Estilos para filas disponibles */
+.disponible {
+    background-color: green;
+    color: white;
+}
