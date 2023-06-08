@@ -1,8 +1,8 @@
-<?php include("template/cabecera.php");?>
+<?php include("../template/cabecera.php");?>
 
 <div class="container">
         <?php
-        $imageDirectory = '../img/condominios//';
+        $imageDirectory = '../../../img/condominios//';
         $images = glob($imageDirectory . '*.{jpg,jpeg,png,gif}', GLOB_BRACE);
 
         $rowCount = 0;
@@ -36,9 +36,9 @@
         ?>
     </div>
 
-    <script src="js/lightbox.js"></script>
+    <script src="../../js/lightbox.js"></script>
 
-<?php include("template/pie.php");?>
+<?php include("../template/pie.php");?>
 
 
 

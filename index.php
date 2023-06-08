@@ -1,8 +1,3 @@
-<?php
-include 'conexionBDD.php';
-include("template/cabecera.php");
-?>
-
 <style>
   body{
     background: url(css/fondoC.png);
@@ -77,10 +72,8 @@ include("template/cabecera.php");
 
         <button type="submit" class="btn btn-primary btn-lg" onclick="location='inicio_cliente.php'">Ingresar</button>
         <button type="submit" class="btn btn-primary btn-lg" onclick="location='admin.php'">¿Olvidaste tu contraseña?</button>
-        <button  type="submit" class="btn btn-primary btn-lg"  onclick="location='./PHP_ADMIN/index2_0.php'">2.0</button>
+        <button  type="submit" class="btn btn-primary btn-lg"  onclick="location='./src/administrador/seccion/inicio.php'">2.0</button>
 
     </div>
-
-    <?php include("template/pie.php");?>
 </body>
 </html>

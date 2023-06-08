@@ -1,6 +1,6 @@
 <?php
-include("template/cabecera.php");
-include('../conexionBDD.php');
+include("../template/cabecera.php");
+include('../../../conexionBDD.php');
 ?>
 
 <div class="container text-center">
@@ -44,4 +44,4 @@ include('../conexionBDD.php');
   
 </div>
 
-<?php include("template/pie.php"); ?>
+<?php include("../template/pie.php"); ?>

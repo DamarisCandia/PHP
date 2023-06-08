@@ -1,5 +1,5 @@
 <?php
-include 'conexionBDD.php';
+include '../conexionBDD.php';
 $mes = isset($_POST['mes']) ? $_POST['mes'] : date('m');
 $anio = isset($_POST['anio']) ? $_POST['anio'] : date('Y');
 $query = "SELECT m.nombre, p.estado FROM miembros m

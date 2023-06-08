@@ -1,14 +1,14 @@
-<?php include("template/cabecera.php");?>
+<?php include("../template/cabecera.php");?>
 
 <div class="container text-center">
     <div id="img_logo">
         <button id="pdf_button">
             Generar informe PDF
-            <img src="../img/pdf.png" alt="Logo PDF">
+            <img src="../../../img/pdf.png" alt="Logo PDF">
         </button>
         <button id="excel_button">
             Generar informe Excel
-            <img src="../img/excel.png" alt="Logo Excel">
+            <img src="../../../img/excel.png" alt="Logo Excel">
         </button>
     </div>
 </div>
@@ -34,4 +34,4 @@
     }
 </script>
 
-<?php include("template/pie.php");?>
+<?php include("../template/pie.php");?>
