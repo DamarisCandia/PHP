@@ -1,5 +1,5 @@
 <?php 
-    include('../../../../conexionBDD.php');
+    include('../../../conexionBDD.php');
 ?>
 
 <div class="container" id="tabla_usuarios">

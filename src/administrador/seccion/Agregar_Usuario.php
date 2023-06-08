@@ -1,5 +1,5 @@
 <?php
-    include('../../../../conexionBDD.php');
+    include('../../../conexionBDD.php');
     
     // Obtener los valores del formulario
     $nombre = $_POST['nombre_usuario'];
@@ -17,7 +17,7 @@
 
     $nuevo_id = $cantidad_usuarios + 1;
 
-    $password = password_hash($pass, PASSWORD_DEFAULT, ['cost' => 10])
+    $password = password_hash($pass, PASSWORD_DEFAULT, ['cost' => 10]);
 
 
 
