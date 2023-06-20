@@ -43,6 +43,8 @@
   text-align: center;
 }
 </style>
+
+
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -54,26 +56,28 @@
     
 </head>
 <body>
+
     <img src="css/logoc.png">
 
-    <div id="login", class="bloque5">
+    <div id="login" class="bloque5">
+    <form method="POST" action="Iniciar_sesion.php">
 
         <div class="input">
-            <label for="uname">Usuario: </label>
-            <input type="text" id="uname" name="name">
+            <label for="rut">Usuario:</label>
+            <input type="text" id="rut" name="rut" required>
         </div>
         
         <div class="input">
-            <label for="uname">Contraseña: </label>
-            <input type="password" id="uname" name="name">
+            <label for="password">Contraseña:</label>
+            <input type="password" id="password" name="password" required>
         </div>
 
         <br>
 
-        <button type="submit" class="btn btn-primary btn-lg" onclick="location='inicio_cliente.php'">Ingresar</button>
-        <button type="submit" class="btn btn-primary btn-lg" onclick="location='admin.php'">¿Olvidaste tu contraseña?</button>
-        <button  type="submit" class="btn btn-primary btn-lg"  onclick="location='./src/administrador/seccion/inicio.php'">2.0</button>
+        <button type="submit" class="btn btn-primary btn-lg">Ingresar</button>
+        <button class="btn btn-primary btn-lg">¿Olvidaste tu contraseña?</button>
 
-    </div>
+    </form>
+</div>
 </body>
 </html>
