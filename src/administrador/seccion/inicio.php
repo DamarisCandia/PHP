@@ -7,7 +7,7 @@
     // Continúa con el resto de los campos del usuario
 
     // Mostrar los datos del usuario
-    echo "Bienvenido, $userNombre (Perfil: $userPerfil)";
+    //echo "Bienvenido, $userNombre (Perfil: $userPerfil)";
 ?>
 
 

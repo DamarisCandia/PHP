@@ -17,16 +17,25 @@
 
     $nuevo_id = $cantidad_usuarios + 1;
 
-    $password = password_hash($pass, PASSWORD_DEFAULT, ['cost' => 10]);
+    $password = $pass;
+    //$password = password_hash($pass, PASSWORD_DEFAULT, ['cost' => 10]);
 
 
 
     // Consulta para insertar el nuevo usuario en la tabla
     $insertQuery = "INSERT INTO vf_users(User_Id, User_Nombre, User_correo, User_Password, User_Fono, User_Rut, User_Perfil_Id, User_Depto_Id, User_Habilitado) VALUES ('$nuevo_id', '$nombre', '$correo', '$password', '$numero', '$rut', '2', '$depto', '1')";
-    
+
+  
     // Ejecutar la consulta
     if ($bdd->query($insertQuery) === TRUE) {
         echo "Usuario agregado correctamente.";
+        
+        $updateQuery = "UPDATE vf_deptos SET Dept_Habilitado = '1' WHERE Dept_Id = '$depto'";
+        if ($bdd->query($updateQuery) === TRUE) {
+            echo "Estado del departamento actualizado correctamente.";
+        } else {
+            echo "Error al actualizar el estado del departamento: " . $bdd->error;
+        }
     } else {
         echo "Error al agregar usuario: " . $bdd->error;
     }
