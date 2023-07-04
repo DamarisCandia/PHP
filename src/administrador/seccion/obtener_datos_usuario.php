@@ -23,7 +23,7 @@ if ($result->num_rows > 0) {
     // Ejemplo:
     ?>
     <div class="row offset-md-3">
-        <form action="Guardar_edicion_usuario.php" method="POST">
+        <form action="./Guardar_edicion_usuario.php" method="POST">
             <div class="row offset-md-3">
                 <div class="col-2 col-sm-3">
                     <span id="basic-addon0">Id</span>
@@ -60,7 +60,15 @@ if ($result->num_rows > 0) {
                 </div>
 
                 <div class="w-100 mb-3"></div>
+    
+                <div class="col-2 col-sm-3">
+                    <span id="basic-addon4">Depto</span>
+                </div>
+                <div class="col col-sm-8">
+                    <input type="text" class="form-control" name="depto_id" placeholder="Ingrese depto" aria-label="Depto del usuario" aria-describedby="basic-addon4" required value="<?php echo $row['User_Depto_Id']; ?>">
+                </div>
 
+                <div class="w-100 mb-3"></div>
                 <div class="col-2 col-sm-3">
                     <span id="basic-addon5">Estado</span>
                 </div>
@@ -69,6 +77,18 @@ if ($result->num_rows > 0) {
                 </div>
 
                 <div class="w-100 mb-3"></div>
+                
+                <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="radio" name="estado_usuario" id="inlineRadio1" value="1" <?php if ($row['User_Habilitado'] == '1') echo 'checked'; ?>>
+                    <label class="form-check-label" for="inlineRadio1">Activo</label>
+                </div>
+                <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="radio" name="estado_usuario" id="inlineRadio2" value="0" <?php if ($row['User_Habilitado'] == '0') echo 'checked'; ?>>
+                    <label class="form-check-label" for="inlineRadio2">Inactivo</label>
+                </div>
+               
+                <div class="w-100 mb-3"></div>
+
                 <div class="offset-md-5">
                     <input type="submit" value="Guardar">
                 </div>

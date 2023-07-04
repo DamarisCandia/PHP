@@ -28,13 +28,15 @@
   
     // Ejecutar la consulta
     if ($bdd->query($insertQuery) === TRUE) {
-        echo "Usuario agregado correctamente.";
+        //echo "Usuario agregado correctamente.";
         
         $updateQuery = "UPDATE vf_deptos SET Dept_Habilitado = '1' WHERE Dept_Id = '$depto'";
         if ($bdd->query($updateQuery) === TRUE) {
-            echo "Estado del departamento actualizado correctamente.";
+            //echo "Estado del departamento actualizado correctamente.";
+            echo "<script> location.href = '../seccion/Usuarios.php' </script>";
         } else {
-            echo "Error al actualizar el estado del departamento: " . $bdd->error;
+            //echo "Error al actualizar el estado del departamento: " . $bdd->error;
+            
         }
     } else {
         echo "Error al agregar usuario: " . $bdd->error;

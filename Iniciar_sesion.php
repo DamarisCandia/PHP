@@ -26,7 +26,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         // Continúa con el resto de los campos del usuario
 
         // Redirigir a la página 2.0 y pasar los datos como parámetros
-        header("Location: ./src/administrador/template/cabecera.php?userPerfil=$userPerfil&userNombre=$userNombre&UserDepto=$UserDepto");
+        header("Location: ./src/administrador/seccion/inicio.php?userPerfil=$userPerfil&userNombre=$userNombre&UserDepto=$UserDepto");
         exit;
     }
 
