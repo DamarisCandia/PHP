@@ -1,7 +1,7 @@
 <?php
-$bddHost ='localhost:3307';
-$bddUser = 'admin';
-$bddPassword = 'admin';
+$bddHost = 'localhost';
+$bddUser = 'Damaris';
+$bddPassword = 'pass';
 $bddName = 'phpbdd';
 
 $bdd = new mysqli($bddHost, $bddUser, $bddPassword, $bddName);
