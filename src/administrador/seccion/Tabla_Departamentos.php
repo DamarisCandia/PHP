@@ -25,7 +25,7 @@ $edificiosResult = $bdd->query($edificiosQuery);
         <form method="POST" action="">
             <div class="form-group row mb-3">
                 <div class="col">
-                <label for="nombre_edificio">Filtrar por nombre de edificio:</label>
+                <strong>Filtrar por nombre de edificio:</strong>
                 <select class="form-control" name="nombre_edificio" id="nombre_edificio">
                     <option value="">Todos los edificios</option>
                     <?php

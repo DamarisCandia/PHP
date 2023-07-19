@@ -3,19 +3,23 @@
     include("../template/cabecera.php");
     
 ?>
+<style>
+  .boton-derecha {
+    margin-left: auto;
+    margin-right: 5%;
+  }
+  </style>
 
-    <div class="text-end">
+<div class="text-end boton-derecha">
         <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#Asignar_Usuario">
             Agregar
         </button>
     </div>
     
-
-<?php 
+<?php
     include("./Tabla_Usuarios.php");
 ?>
     
-
 
 <div class="modal fade" id="Asignar_Usuario" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog modal-dialog-centered">
@@ -89,8 +93,6 @@
     </div>
 </div>
 
-
-
-<?php 
+<?php
     include("../template/pie.php");
 ?>

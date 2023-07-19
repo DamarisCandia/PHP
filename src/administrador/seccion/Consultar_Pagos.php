@@ -2,14 +2,20 @@
 include("../template/cabecera.php");
 include('../../../conexionBDD.php');
 ?>
+<style>
+  .boton-derecha {
+    margin-left: auto;
+    margin-right: 0;
+  }
+</style>
 
 <div class="container text-center">
   <h2>TABLA DE GASTOS COMUNES</h2>
-  <div class="text-end">
-        <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#Gasto_Comun">
-            Agregar
-        </button>
-    </div>
+  <div class="text-end boton-derecha">
+    <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#Gasto_Comun">
+        Agregar
+    </button>
+  </div>
   <table class="table table-striped table-hover">
     <thead>
       <tr>
@@ -115,6 +121,5 @@ include('../../../conexionBDD.php');
     </div>
   </div>
 </div>
-
 
 <?php include("../template/pie.php"); ?>
