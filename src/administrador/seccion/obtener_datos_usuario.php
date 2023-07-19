@@ -29,7 +29,7 @@ if ($result->num_rows > 0) {
                     <span id="basic-addon0">Id</span>
                 </div>
                 <div class="col col-sm-8">
-                    <input type="text" class="form-control" name="id_usuario" placeholder="Ingrese ID" aria-label="ID del usuario" aria-describedby="basic-addon0" required value="<?php echo $row['User_Id']; ?>" disabled>
+                    <input type="text" class="form-control" name="id_usuario" placeholder="Ingrese ID" aria-label="ID del usuario" aria-describedby="basic-addon0" required value="<?php echo $row['User_Id']; ?> " readonly>
                 </div>
 
                 <div class="w-100 mb-3"></div>

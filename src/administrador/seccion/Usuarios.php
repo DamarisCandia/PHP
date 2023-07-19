@@ -1,7 +1,6 @@
 <?php 
     include('../../../conexionBDD.php');
     include("../template/cabecera.php");
-    
 ?>
 <style>
   .boton-derecha {
@@ -44,7 +43,7 @@
                             <span id="basic-addon2">Correo</span>
                         </div>
                         <div class="col col-sm-8">
-                            <input type="text" class="form-control" name="correo_usuario" placeholder="Ingrese correo" aria-label="Correo del usuario" aria-describedby="basic-addon2" required>
+                            <input type="email" class="form-control" name="correo_usuario" placeholder="Ingrese correo" aria-label="Correo del usuario" aria-describedby="basic-addon2" required>
                         </div>
 
                         <div class="w-100 mb-3"></div>

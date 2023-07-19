@@ -22,7 +22,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
 
     // Obtener todos los departamentos del edificio seleccionado
-    $queryDepartamentos = $bdd->prepare("SELECT Dept_Num_Id FROM vf_deptos WHERE Edif_Num_Id = ? AND Dept_Habilitado = 1");
+    $queryDepartamentos = $bdd->prepare("SELECT Dept_Num FROM vf_deptos WHERE Edif_Num_Id = ? AND Dept_Habilitado = 1");
     
 
     $queryDepartamentos->bind_param("i", $edificioId);
@@ -34,12 +34,11 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
         // Insertar el gasto en la tabla VF_Gastos
         $insertGasto = $bdd->prepare("INSERT INTO VF_Gastos (Gasto_Id, Gasto_Nombre, Gasto_Valor, Gasto_Fecha, Gasto_Estado_Id, Dept_Num_Id) VALUES (?, ?, ?, ?, ?, ?)");
-        $insertGasto->bind_param("isssii", $gastosId, $tipoGasto, $valorGasto, $fechaGasto, $gastoEstadoId, $deptNumId);
+        $insertGasto->bind_param("isssii", $nuevo_id, $tipoGasto, $valorGasto, $fechaGasto, $gastoEstadoId, $deptNumId);
 
-        while ($rowDepartamento = $resultDepartamentos->fetch_assoc()) {
-            $deptNumId = $rowDepartamento["Dept_Num_Id"];
+            $deptNumId = $resultDepartamentos->fetch_assoc()["Dept_Num"];
             $insertGasto->execute();
-        }
+
         $queryDepartamentos->close();
         $insertGasto->close();
         echo "El gasto se ha registrado para todos los departamentos del edificio seleccionado.";
