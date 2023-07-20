@@ -15,7 +15,7 @@
     $fila_cantidad_usuarios = $resultado_cantidad_usuarios->fetch_assoc();
     $cantidad_usuarios = $fila_cantidad_usuarios['cantidad_usuarios'];
 
-    $nuevo_id = $cantidad_usuarios + 1;
+    $nuevo_usuario_id = $cantidad_usuarios + 1;
 
     $password = $pass;
     //$password = password_hash($pass, PASSWORD_DEFAULT, ['cost' => 10]);
@@ -31,12 +31,13 @@
     if ($query->num_rows > 0) {
         while ($row_data = $query->fetch_assoc()) {
             $id_gasto = $row_data["Gasto_Id"];
-            $insertQuery = "INSERT INTO vf_pago_gastos(User_id, Gasto_id, Gasto_Estado_id, mes, year)  VALUES ('$nuevo_id', '$id_gasto', '$mesFormateado', '$year')";
+            $insertQuery = "INSERT INTO vf_pago_gastos(User_id, Gasto_id, Gasto_Estado_id, mes, year)  VALUES ('$nuevo_usuario_id', '$id_gasto','2', '$mesFormateado', '$year')";
+            $bdd->query($insertQuery);
         }
     }
 
     // Consulta para insertar el nuevo usuario en la tabla
-    $insertQuery = "INSERT INTO vf_users(User_Id, User_Nombre, User_correo, User_Password, User_Fono, User_Rut, User_Perfil_Id, User_Depto_Id, User_Habilitado) VALUES ('$nuevo_id', '$nombre', '$correo', '$password', '$numero', '$rut', '2', '$depto', '1')";
+    $insertQuery = "INSERT INTO vf_users(User_Id, User_Nombre, User_correo, User_Password, User_Fono, User_Rut, User_Perfil_Id, User_Depto_Id, User_Habilitado) VALUES ('$nuevo_usuario_id', '$nombre', '$correo', '$password', '$numero', '$rut', '2', '$depto', '1')";
 
     // Ejecutar la consulta
     if ($bdd->query($insertQuery) === TRUE) {
