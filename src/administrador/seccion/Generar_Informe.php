@@ -39,11 +39,16 @@
             Generar informe Excel
             <img src="../../../img/excel.png" alt="Logo Excel">
         </button>
+
+        <button id="aButton">aaa</button>
     </div>
 </div>
+
 <script>
     // Obtener los elementos de botón
     var pdfButton = document.getElementById('pdf_button');
+
+    //href="Generar_Reporte.xlsx" download
     var excelButton = document.getElementById('excel_button');
     var selectTipoInforme = document.getElementById('disabledSelect');
     // Agregar evento de clic al botón de PDF
@@ -61,4 +66,14 @@
         alert(mensaje);
     }
 </script>
+
+<script>
+    var aButton = document.getElementById('aButton');
+
+    aButton.addEventListener('click', function() {
+        window.location.href = 'Generar_Excel.php';
+    });
+</script>
+
+
 <?php include("../template/pie.php");?>
