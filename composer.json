@@ -1,0 +1,15 @@
+{
+    "name": "56950/gestion-gastos-comunes",
+    "description": "proyecto",
+    "type": "project",
+    "license": "no",
+    "autoload": {
+        "psr-4": {
+            "56950\\GestionGastosComunes\\": "src/"
+        }
+    },
+    "require": {
+        "phpoffice/phpspreadsheet": "^1.29",
+        "dompdf/dompdf": "^2.0"
+    }
+}

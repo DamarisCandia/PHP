@@ -1,5 +1,6 @@
 <?php
-include 'conexionBDD.php'
+include 'conexionBDD.php';
+include 'vendor/autoload.php';
 ?>
 <?php
     if(!isset($_GET['seccion'])){
