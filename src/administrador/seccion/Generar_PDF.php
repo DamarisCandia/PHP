@@ -42,6 +42,4 @@ header('Content-Type: application/pdf');
 header('Content-Disposition: attachment; filename="ReportePDFAnual.pdf"');
 $writer->save('php://output');
 
-header('Location: ' . $_SERVER['HTTP_REFERER']);
-exit;
 ?>

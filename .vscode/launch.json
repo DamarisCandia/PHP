@@ -9,7 +9,7 @@
             "name": "Launch Chrome",
             "request": "launch",
             "type": "chrome",
-            "url": "http:/localhost/php/PHP-1",
+            "url": "http:/localhost/GestionGastosComunes/",
             "webRoot": "${workspaceFolder}"
         },
         {

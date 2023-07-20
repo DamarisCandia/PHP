@@ -44,6 +44,4 @@ header('Content-Type: application/vnd.ms-excel');
 header('Content-Disposition: attachment; filename="ReporteExcelAnual.xls"');
 $writer->save('php://output');
 
-header('Location: ' . $_SERVER['HTTP_REFERER']);
-exit;
 ?>
