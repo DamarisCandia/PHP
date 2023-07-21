@@ -21,9 +21,6 @@ include('../../../conexionBDD.php');
       <tr>
         <th scope="col">Nombre</th>
         <th scope="col">Valor</th>
-        <th scope="col">Fecha</th>
-        <th scope="col">Estado</th>
-        <th scope="col">Num° depto</th>
       </tr>
     </thead>
     <tbody>
@@ -39,9 +36,6 @@ include('../../../conexionBDD.php');
           <tr>
             <td scope="row"><?php echo $row["Gasto_Nombre"]; ?></td>
             <td><?php echo $row["Gasto_Valor"]; ?></td>
-            <td><?php echo $row["Gasto_Fecha"]; ?></td>
-            <td><?php echo $estadoRow["Tipo_Estado"]; ?></td>
-            <td><?php echo $row["Dept_Num_Id"]; ?></td>
           </tr>
       <?php
         }
@@ -63,7 +57,7 @@ include('../../../conexionBDD.php');
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
       <div class="modal-body">
-      <form action="../guardar_gastos.php" method="POST">
+      <form action="../guardar_gastos.php" method="POST"  id="myForm">
     <div class="row offset-md-3">
         <div class="col-2 col-sm-3">
             <span id="basic-addon1">Nombre</span>
@@ -115,7 +109,26 @@ include('../../../conexionBDD.php');
         <input type="submit" value="Guardar">
     </div>
 </form>
-
+          <script>
+              document.getElementById("myForm").addEventListener("submit", function(event) {
+                  event.preventDefault();
+                  fetch(this.action, {
+                      method: this.method,
+                      body: new FormData(this)
+                  })
+                      .then(function(response) {
+                          if (response.ok) {
+                              alert("El gasto se ha registrado para todos los departamentos del edificio seleccionado.!");
+                              location.reload();
+                          } else {
+                              alert("No se encontraron departamentos habilitados para el edificio seleccionado.");
+                          }
+                      })
+                      .catch(function(error) {
+                          alert("Error de red");
+                      });
+              });
+          </script>
         
       </div>
     </div>
