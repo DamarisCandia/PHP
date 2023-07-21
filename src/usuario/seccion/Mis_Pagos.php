@@ -79,32 +79,24 @@ ORDER BY pg.year, pg.mes");
     </div>
 
     <script>
-        // Get all the buttons with class "edit-btn"
         const editButtons = document.querySelectorAll('.edit-btn');
 
-        // Attach a click event listener to each button
         editButtons.forEach(button => {
             button.addEventListener('click', function () {
-                // Get the data attributes from the clicked button
                 const userId = this.dataset.id;
                 const gastoId = this.dataset.gastoId;
                 const mes = this.dataset.mes;
                 const year = this.dataset.year;
 
-                // Perform an AJAX request to send the data to the server-side script
-                // and execute the SQL query
-                // Example using jQuery:
                 $.ajax({
                     url: 'pagar_gasto.php',
                     method: 'POST',
                     data: {userId: userId, gastoId: gastoId, mes: mes, year: year},
                     success: function (response) {
-                        // Handle the response from the server
                         alert("El gasto se ha registrado para todos los departamentos del edificio seleccionado.!");
                         location.reload();
                     },
                     error: function () {
-                        // Handle any errors
                     }
                 });
             });

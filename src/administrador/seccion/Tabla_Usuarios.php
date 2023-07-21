@@ -51,6 +51,7 @@
                 <td><?php echo $row["User_Habilitado"] ?></td>
                 <td>
                     <button class="btn btn-success edit-btn" data-bs-toggle="modal" data-bs-target="#editModal" data-id="<?php echo $row['User_Id']; ?>"><i class="bi bi-pen"></i></button>
+                    <button class="btn btn-danger delete-btn" data-bs-toggle="modal" data-bs-target="#editModal" data-id="<?php echo $row['User_Id']; ?>"><i class="bi bi-trash"></i></button>
                 </td>
             </tr>
             <?php }
@@ -83,6 +84,20 @@
                 data: { id: userId },
                 success: function(response) {
                     $('#userDetails').html(response);
+                }
+            });
+        });
+
+        $('.delete-btn').on('click', function() {
+            var userId = $(this).data('id');
+            // Realiza una petición AJAX para obtener los detalles del usuario
+            $.ajax({
+                url: 'borrar_usuario.php',
+                method: 'POST',
+                data: { id: userId },
+                success: function(response) {
+                    alert("El usuario fue borrado exitosamente.");
+                    location.reload();
                 }
             });
         });
