@@ -21,7 +21,7 @@ FROM vf_users
          INNER JOIN vf_pago_gastos pg ON vf_users.User_Id = pg.User_id
          INNER JOIN vf_gastos g ON pg.Gasto_id = g.Gasto_Id
          INNER JOIN vf_estado_gasto e ON pg.Gasto_Estado_id= e.Estado_Id
-WHERE vf_users.User_Id = $userId
+WHERE vf_users.User_Id = $userId 
 ORDER BY pg.year, pg.mes");
         ?>
 
@@ -49,23 +49,26 @@ ORDER BY pg.year, pg.mes");
                         <td><?php echo $row["mes"] ?></td>
                         <td><?php echo $row["year"] ?></td>
                         <td>
-                            <button class="btn btn-success edit-btn"
-                                    data-id="<?php echo $userId; ?>"
-                                    data-gasto-id="<?php echo $row['Gasto_id']; ?>"
-                                    data-mes="<?php echo $row['mes']; ?>"
-                                    data-year="<?php echo $row['year']; ?>"
-                                    data-bs-toggle="modal"
-                                    data-bs-target="#editModal">
-                                Pagar
-                            </button>
+                            <?php if ($row["Tipo_Estado"] !== "Pagado") { ?>
+                                <button class="btn btn-success edit-btn"
+                                        data-id="<?php echo $userId; ?>"
+                                        data-gasto-id="<?php echo $row['Gasto_id']; ?>"
+                                        data-mes="<?php echo $row['mes']; ?>"
+                                        data-year="<?php echo $row['year']; ?>"
+                                        data-bs-toggle="modal"
+                                        data-bs-target="#editModal">
+                                    Pagar
+                                </button>
+                            <?php } ?>
                         </td>
+
                     </tr>
                 <?php }
             } else { ?>
                 <tr>
                     <td colspan="6">
                         <div class="alert alert-warning" role="alert">
-                            No tienes Comunes
+                            No tienes gastos comunes
                         </div>
                     </td>
                 </tr>
