@@ -9,7 +9,7 @@ INNER JOIN vf_pago_gastos ON vf_users.User_Id = vf_pago_gastos.User_id
 INNER JOIN vf_gastos g ON vf_pago_gastos.Gasto_id = g.Gasto_Id
 INNER JOIN vf_estado_gasto e ON g.Gasto_Estado_Id = e.Estado_Id
 WHERE vf_users.User_Perfil_Id = 2
-ORDER BY vf_pago_gastos.year");
+ORDER BY vf_pago_gastos.year, vf_users.User_Nombre, vf_pago_gastos.mes");
 // Create a new Spreadsheet object
 $spreadsheet = new Spreadsheet();
 $sheet = $spreadsheet->getActiveSheet();
