@@ -22,11 +22,16 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         // Guardar los datos en variables individuales
         $userPerfil = $usuario["User_Perfil_Id"];
         $userNombre = $usuario["User_Nombre"];
-        $UserDepto  = $usuario["User_Depto_Id"];
+        $UserDepto = $usuario["User_Depto_Id"];
+        $userId = $usuario["User_Id"];
         // Continúa con el resto de los campos del usuario
 
         // Redirigir a la página 2.0 y pasar los datos como parámetros
-        header("Location: ./src/administrador/seccion/inicio.php?userPerfil=$userPerfil&userNombre=$userNombre&UserDepto=$UserDepto");
+        if ($userPerfil == 1) {
+            header("Location: ./src/administrador/seccion/inicio.php?userPerfil=$userPerfil&userNombre=$userNombre&UserDepto=$UserDepto");
+        } else {
+            header("Location: ./src/usuario/seccion/Mis_Pagos.php?userPerfil=$userPerfil&userNombre=$userNombre&UserDepto=$UserDepto&UserId=$userId");
+        }
         exit;
     }
 
